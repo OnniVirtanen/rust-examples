@@ -7,11 +7,11 @@ struct Matrix {
 
 impl Matrix {
     pub fn new(data: Vec<Vec<i64>>, rows: usize, columns: usize) -> Self {
-        return Self {
+        Self {
             data: data,
             rows: rows,
             columns: columns,
-        };
+        }
     }
 
     pub fn matmul(a: Matrix, b: Matrix) -> Self {
@@ -30,11 +30,11 @@ impl Matrix {
             }
         }
 
-        return c;
+        c
     }
 
     pub fn get_dimensions(&self) -> (usize, usize) {
-        return (self.rows, self.columns);
+        (self.rows, self.columns)
     }
 }
 
@@ -73,7 +73,7 @@ mod tests {
 
         assert_eq!(expected, ab);
     }
-    
+
     #[test]
     fn test_matrix_dimensions() {
         let a = Matrix::new(vec![vec![2, 5, 6]], 1, 3);
